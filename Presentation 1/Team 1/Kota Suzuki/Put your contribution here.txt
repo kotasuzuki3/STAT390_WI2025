@@ -1,6 +1,7 @@
-Put whatever you did here, except data files. Don't put any data files (tissue images) here, they are too large for github. You may indicate the data your code uses - provide the OneDrive link to that data, or just mention the path to it.
+I worked on matching the extracted tissue slices from Case 25-30. 
 
-If you wrote any code (python / QuPath / any other language), comment it well, and put it here, along with a Readme file describing the code. If the code is meant to be useful to other people, put instructions in the Readme file on how to use it. You will get extra credit if many people use your code!
+In Case 25, there were tissue slices that were very closely laid out back-to-back. This made Cara's automated code extract two separate slices as one image. To fix this, I changed this part of Cara's code: 
 
-If you did literature survey, then put it here as well.
+double distanceThreshold = 5000.0
 
+By decreasing this threshold value, I made sure that each tissue slice was extracted invidually. Other than this, I had no other issue matching the three stain types and uploading them onto OneDrive.
